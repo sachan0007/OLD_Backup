@@ -1,0 +1,149 @@
+Create a freestyle job to print "Hello world".
+================================================================
+My Views- New Item
+Give Item name
+Click FreestyleProject-OK
+General-Add Build steps
+echo "Hello World"
+From left pane click - Build now
+See build history for last build item.
+
+Output:-
+ Started by user Abhishek Sachan Running as SYSTEM Building in workspace 
+/var/lib/jenkins/workspace/Hello_World [Hello_World] $ /bin/sh -xe 
+/tmp/jenkins6458105352823298885.sh + echo 'Hello World' Hello World Finished: SUCCESS 
+==============================================================================
+Create a freestyle job to which take absolute path of a directory then
+Print a message "drectory not exist" if directory doesn't exist on file system
+Print "Inappropriate permissions" if you don't have permissions to list files.
+
+https://www.cyberciti.biz/faq/unix-linux-test-existence-of-file-in-bash/ 
+https://www.cyberciti.biz/faq/unix-linux-test-existence-of-file-in-bash/ 
+
+My Views- New Item
+Give Item name
+Click FreestyleProject-OK
+General-Build execute shell
+cd /var/lib/jenkins/
+ls
+file="JenkinsAssignment1.md"
+if [ -f "$file" ]
+then
+	echo "$file exist"
+else
+	echo "$file not exist"
+fi
+ls 
+if [ $? -eq 0 ];
+then
+        echo "Here is the list"
+else
+        echo "Inappropriate permissions"
+fi
+
+
+From left pane click - Build now
+See build history for last build item.
+
+Output:-
+Started by user Abhishek Sachan
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/Hello_World
+[Hello_World] $ /bin/sh -xe /tmp/jenkins2455843676668928253.sh
++ cd /var/lib/jenkins/
++ ls
+assignment.sh
+config.xml
+credentials.xml
+fingerprints
+hudson.model.UpdateCenter.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml
+hudson.plugins.git.GitTool.xml
+identity.key.enc
+jenkins.install.InstallUtil.lastExecVersion
+jenkins.install.UpgradeWizard.state
+jenkins.model.DownloadSettings.xml
+jenkins.model.JenkinsLocationConfiguration.xml
+jenkins.security.apitoken.ApiTokenPropertyConfiguration.xml
+jenkins.security.QueueItemAuthenticatorConfiguration.xml
+jenkins.security.UpdateSiteWarningsConfiguration.xml
+jenkins.telemetry.Correlator.xml
+jobs
+logs
+nodeMonitors.xml
+nodes
+plugins
+queue.xml
+queue.xml.bak
+secret.key
+secret.key.not-so-secret
+secrets
+spring3hibernate
+training.sh
+updates
+userContent
+users
+workflow-libs
+workspace
++ file=JenkinsAssignment1.md
++ '[' -f JenkinsAssignment1.md ']'
++ echo 'JenkinsAssignment1.md not exist'
+JenkinsAssignment1.md not exist
++ ls
+assignment.sh
+config.xml
+credentials.xml
+fingerprints
+hudson.model.UpdateCenter.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml
+hudson.plugins.git.GitTool.xml
+identity.key.enc
+jenkins.install.InstallUtil.lastExecVersion
+jenkins.install.UpgradeWizard.state
+jenkins.model.DownloadSettings.xml
+jenkins.model.JenkinsLocationConfiguration.xml
+jenkins.security.apitoken.ApiTokenPropertyConfiguration.xml
+jenkins.security.QueueItemAuthenticatorConfiguration.xml
+jenkins.security.UpdateSiteWarningsConfiguration.xml
+jenkins.telemetry.Correlator.xml
+jobs
+logs
+nodeMonitors.xml
+nodes
+plugins
+queue.xml
+queue.xml.bak
+secret.key
+secret.key.not-so-secret
+secrets
+spring3hibernate
+training.sh
+updates
+userContent
+users
+workflow-libs
+workspace
++ '[' 0 -eq 0 ']'
++ echo 'Here is the list'
+Here is the list
+Finished: SUCCESS
+=======================================================================================
+Update the previously created freestyle job to only retain last 10 build history
+but not beyond 2 days.
+
+Download and install "Discard Old Build" Plugin
+Go to configure- Genral- post build action
+Add post build action- Discard old builds
+Days to keep build=2
+Max # of builds to keep=10
+===================================================================================
+Clone the code available in the same repository.
+Using ssh protocol:-
+
+Create a free style project 
+General-  Source Code Management- git
+Add repo url- https://github.com/amit642/opstree_ninja_traininig.git
+apply and save 
+Build now
+
+Output:
