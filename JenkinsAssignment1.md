@@ -152,13 +152,13 @@ Started by user Abhishek Sachan<br/>
 Running as SYSTEM<br/>
 Building in workspace /var/lib/jenkins/workspace/Clone-git_Protocol<br/>
 using credential 2ea3989f-8b8a-421d-9e59-3335d75f3047<br/>
- > git rev-parse --is-inside-work-tree # timeout=10<br/>
+ git rev-parse --is-inside-work-tree # timeout=10<br/>
 Fetching changes from the remote Git repository<br/>
- > git config remote.origin.url https://github.com/sachan007/private.git # timeout=10
+  git config remote.origin.url https://github.com/sachan007/private.git # timeout=10
 Fetching upstream changes from https://github.com/sachan007/private.git
- > git --version # timeout=10
+  git --version # timeout=10
 using GIT_ASKPASS to set credentials 
- > git fetch --tags --progress https://github.com/sachan007/private.git +refs/heads/*:refs/remotes/origin/*
+  git fetch --tags --progress https://github.com/sachan007/private.git +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
 Checking out Revision f44d1f86e5539323a85e7a48f68f04ee33a93532 (refs/remotes/origin/master)
@@ -168,17 +168,16 @@ Commit message: "Initial commit"
 First time build. Skipping changelog.
 Finished: SUCCESS
 
-===========================================================================
 ##Clone the code available in the same repository.
 ##Using ssh protocol:-
--generate key for jenkins access in jenkins root directory as jenkins user (/var/lib/jenkins)
+generate key for jenkins access in jenkins root directory as jenkins user (/var/lib/jenkins)
 Go to  /var/lib/jenkins
 Switch to jenkins user: 
-# su jenkins
-# ssh-keygen
-#cd .ssh
-#Find file …..pub
-#Cat id_rsa.pub
+su jenkins
+ssh-keygen
+cd .ssh
+Find file …..pub
+Cat id_rsa.pub
 Copy public key and add this in settings in Github (ssh and gcc key)
 Now go to jenkins and create credentials to be used for git in jenkins
 Credentials- system- global credentials unrestricted- Add credentials- 
@@ -231,7 +230,7 @@ Go to build history-check status
 You will see changes as below and who triggered this build
 
 Changes
-1. test2 (detail / githubweb)
+test2 (detail / githubweb)
 Started by an SCM change
 Revision: d20dcd5a26017f0cd5c764f5c4450ed0b1a9828c
 refs/remotes/origin/abhi
