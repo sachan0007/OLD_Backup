@@ -8,7 +8,7 @@ Arrange your jobs in Jenkins in such a fashion that it will be easy to manage th
 
 **Solution:**
 
-![1](images/1.jpg "1")
+![1](images/1.jpg)
 
 
 
