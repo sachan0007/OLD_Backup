@@ -5,7 +5,9 @@ Project2 has 4 environment DEV, QA, UAT, PROD
 Project3 has 5 environment DEV, QA, UAT, PT, PROD
 Now as you are already aware for each project you will have CI jobs and deployment jobs, create dummy jobs.
 Arrange your jobs in Jenkins in such a fashion that it will be easy to manage them and for a new person it will be pretty easy to understand which job belong to which project.
+
 **Solution:**
+
 !(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg]
 !(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/2.jpg]
 !(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/3.jpg]
