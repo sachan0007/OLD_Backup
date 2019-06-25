@@ -22,6 +22,8 @@ Created 5 different views DEV, QA, UAT, PT, PROD and put each projects correspon
 
 Create a Jenkins job(ManageTemplate) that will take a template file, property file(value of variables used in template file) and location as input and then create a file in local system.
 
+
+
 Modify ManageTemplate jenkins job to take remote system IP as input to create the file.
 
 Modify ManageTemplate jenkins job to take additional parameters for file to be managed such as:
