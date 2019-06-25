@@ -9,8 +9,10 @@ Arrange your jobs in Jenkins in such a fashion that it will be easy to manage th
 **Solution:**
 
 ![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg)
-
-
+![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/2.jpg)
+![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/3.jpg)
+![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/4.jpg)
+![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/5.jpg)
 
 
 
