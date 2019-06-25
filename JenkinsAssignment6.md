@@ -8,11 +8,11 @@ Arrange your jobs in Jenkins in such a fashion that it will be easy to manage th
 
 **Solution:**
 
-!(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg]
-!(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/2.jpg]
-!(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/3.jpg]
-!(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/4.jpg]
-!(Dev)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/5.jpg]
+![Dev](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg)
+![Dev](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/2.jpg)
+![Dev][https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/3.jpg)
+![Dev](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/4.jpg)
+![Dev](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/5.jpg)
 
 
 
