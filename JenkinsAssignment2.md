@@ -34,7 +34,9 @@ find / -type f -iname "*.mp4" -printf '%s %p\n'| sort -nr | head -10
 
 **[HTML Publisher]: Create a Jenkins job that will generate a HTML file for the commits happened in last 10 days and publishes it as HTML report**
 * install HTML Publisher plugin configure previous job Build-Execute 
-* shell-Commans-Add command below git log --since=10.days Save and apply 
+* shell-Commans-Add command below 
+* git log --since=10.days 
+* Save and apply 
 * build now 
 
 
