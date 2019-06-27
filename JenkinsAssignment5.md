@@ -2,7 +2,7 @@
 
 Configure extended E-mail notification in Manage jenkins- Configure system
 
-![Config](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/6.png)
+!(Config)[https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/6.png]
 
 Post build Actions- Editable email notifications
 
