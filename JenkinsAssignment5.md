@@ -72,5 +72,21 @@ Build project with parameter.
 ![Img](Images/20.png)
 ![Img](Images/21.png)
 
+**Modify ManageUser jenkins job to take remote system IP as input to create the user.**
 
+Configure SSH remote host in Manage jenkins- Configure system
 
+![Img](Images/27.1.png)
+
+General- This project is parameterized- Configure string parameters
+
+![Img](Images/28.png)
+
+Build- Execute shell script on remote host using ssh
+
+![Img](Images/29.png)
+
+Build with parameters
+
+![Img](Images/30.png)
+![Img](Images/31.png)
