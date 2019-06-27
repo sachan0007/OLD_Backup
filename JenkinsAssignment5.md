@@ -76,17 +76,17 @@ Build project with parameter.
 
 Configure SSH remote host in Manage jenkins- Configure system
 
-![Img](Images/27.1.png)
+![Img](Images/27.1.jpg)
 
 General- This project is parameterized- Configure string parameters
 
-![Img](Images/28.png)
+![Img](Images/28.jpg)
 
 Build- Execute shell script on remote host using ssh
 
-![Img](Images/29.png)
+![Img](Images/29.jpg)
 
 Build with parameters
 
-![Img](Images/30.png)
-![Img](Images/31.png)
+![Img](Images/30.jpg)
+![Img](Images/31.jpg)
