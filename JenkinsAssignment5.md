@@ -2,7 +2,7 @@
 
 Configure extended E-mail notification in Manage jenkins- Configure system
 
-
+![Config](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/6.png)
 
 Post build Actions- Editable email notifications
 
@@ -34,7 +34,7 @@ Apply and Save
 **Modify above Jenkins job to add console output as mail body instead of attachment.**
 
 Go to Extended E-mail notification configuration
-Add this in default content: <pre>${BUILD_LOG, maxLines=9999, escapeHtml=false}</pre>
+Add this in default content: "<pre>${BUILD_LOG, maxLines=9999, escapeHtml=false}</pre>"
 
 
 
@@ -46,4 +46,10 @@ Give Username as parameter.
 
 
 In build execute shell add command to use that parameter and create user.
-Also add "id $username" to get info of user after creation  
+Also add "id $username" to get info of user after creation.
+NOTE: Add jenkins to not get prompted for password when using sudo.To do that add "jenkins ALL=(ALL) NOPASSWD:ALL" in 
+
+Build project with parameter.
+
+
+
