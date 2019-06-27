@@ -11,7 +11,7 @@ Arrange your jobs in Jenkins in such a fashion that it will be easy to manage th
 
 Created 5 different views DEV, QA, UAT, PT, PROD and put each projects corresponding view them.
 
-![1](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg)
+![first](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/1.jpg)
 ![2](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/2.jpg)
 ![3](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/3.jpg)
 ![4](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/Images/4.jpg)
