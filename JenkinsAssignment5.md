@@ -90,3 +90,53 @@ Build with parameters
 
 ![Img](Images/30.jpg)
 ![Img](Images/31.jpg)
+
+**Modify ManageUser jenkins job so that it should be able to support different types of OS such as:
+
+Ubuntu 14/16
+CentOS 6/7**
+
+Just update execute shell with below script:
+
+```
+which yum
+if [$? == 0]
+then
+    sudo adduser $username
+    grep $username /etc/passwd
+else
+    sudo useradd $username
+    grep $username /etc/passwd
+fi
+```
+
+
+
+**Modify ManageUser jenkins job to take additional parameters for remote system to be managed such as:
+username
+user home directory
+user login shell
+
+Modify ManageUser jenkins job where a drop down will be provided of remote systems to be managed.
+Modify ManageUser jenkins job where checkboxes are provided for multiple remote systems.**
+
+Install: Extended parameter plugin
+Configure above job
+Note: Extended choice parameter
+    Single select- for normal dropdown
+    Checkbox- for checkboxes
+
+![Img](Images/32.png)
+
+![Img](Images/33.png)
+
+![Img](Images/34.png)
+
+![Img](Images/35.png)
+
+![Img](Images/36.png)
+
+![Img](Images/37.png)
+
+![Img](Images/38.png)
+
