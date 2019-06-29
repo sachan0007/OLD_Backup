@@ -3,7 +3,7 @@
 create package string parameter.
 Configure execute shell with this parameter.
 
-![Img](Image/39.jpg)
+![Img](Images/39.jpg)
 
 **Modify InstallPackage jenkins job to take remote system IP as input to install the package.**
 
