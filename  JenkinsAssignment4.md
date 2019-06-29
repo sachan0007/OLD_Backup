@@ -36,10 +36,10 @@ fi
 ```
 
 
-**Modify InstallPackage jenkins job to take additional parameters for remote system to be managed:
-
+****Modify InstallPackage jenkins job to take additional parameters for remote system to be managed:
 ssh username
-PrivateKey file**
+PrivateKey file****
+
 
 Open EC2 instance *.pem* file and copy key.
 Create file **key** in */root/.ssh/key* having this key.
