@@ -19,9 +19,9 @@ Build- Execute shell script on remote host using ssh.
 ![Img](Images/45.jpg)
 ![Img](Images/46.jpg)
 
-**Modify InstallPackage jenkins job so that it should be able to support different types of OS such as:**
-**Ubuntu 14/16**
-**CentOS 6/7**
+**Modify InstallPackage jenkins job so that it should be able to support different types of OS such as:**  
+**Ubuntu 14/16**  
+**CentOS 6/7**  
 
 Just replace script as below:
 ```
@@ -35,9 +35,9 @@ fi
 ```
 
 
-**Modify InstallPackage jenkins job to take additional parameters for remote system to be managed:**
-**ssh username**
-**PrivateKey file**
+**Modify InstallPackage jenkins job to take additional parameters for remote system to be managed:**  
+**ssh username**  
+**PrivateKey file**  
 
 
 Open EC2 instance *.pem* file and copy key.
@@ -52,22 +52,22 @@ Parameterize ssh username, ip, package, key file location
 ![Img](Images/51.jpg)
 ![Img](Images/52.jpg)
 
-**Modify InstallPackage jenkins job where a drop down will be provided of remote systems to be managed.**
-**Modify InstallPackage jenkins job where checkboxes are provided for multiple remote systems.**
-
+**Modify InstallPackage jenkins job where a drop down will be provided of remote systems to be managed.**  
+**Modify InstallPackage jenkins job where checkboxes are provided for multiple remote systems.**  
+ 
 ![Img](Images/53.jpg)
 ![Img](Images/54.jpg)
 ![Img](Images/55.jpg)
 ![Img](Images/56.jpg)
 ![Img](Images/57.jpg)
 
-**Create below users in your system**
-**dev**
-**qa**
-**devops**
-**qa user should be allowed only to execute the InstallPackage jenkins job**
-**dev user should be allowed to execute and view the content of InstallPackage jenkins job**
-**devops user should be admin of Jenkins server**
+**Create below users in your system**  
+**dev**  
+**qa**  
+**devops**  
+**qa user should be allowed only to execute the InstallPackage jenkins job**  
+**dev user should be allowed to execute and view the content of InstallPackage jenkins job**  
+**devops user should be admin of Jenkins server**  
 
 ![Img](Images/58.jpg)
 ![Img](Images/59.jpg)
