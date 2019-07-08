@@ -80,7 +80,7 @@ host2 | SUCCESS => {
     "uid": 1011
 }
 ```
-**Change your default execution from 'command' to 'ping'.**  
+**Task: Change your default execution from 'command' to 'ping'.**  
 Update ansible.cfg  
 >module_name = ping  
 Console output:  
@@ -92,7 +92,7 @@ host2 | SUCCESS => {
     "ping": "pong"
 }
 ```
-**Fetch and display to STDOUT Ansible facts using the `setup` module**  
+**Task: Fetch and display to STDOUT Ansible facts using the `setup` module**  
 Ad-hoc command: ansible -m setup host2  
 Console ouput:  
 ```
@@ -543,7 +543,7 @@ host2 | SUCCESS => {
     "failed": false
 }
 ```
-**Fetch and display only the "virtual" subset of facts for each host**  
+**Task: Fetch and display only the "virtual" subset of facts for each host**  
 Ad-hoc command: ansible -m setup -a "gather_subset=virtual" host2  
 Console output:  
 ```
@@ -694,7 +694,7 @@ host2 | SUCCESS => {
     "failed": false
 }
 ```
-**Fetch and display the value of fully qualified domain name (FQDN) of each host from their Ansible facts**  
+**Task: Fetch and display the value of fully qualified domain name (FQDN) of each host from their Ansible facts**  
 Ad-hoc command: ansible -m setup -a "filter=ansible_fqdn" host2  
 Console output:  
 ```
