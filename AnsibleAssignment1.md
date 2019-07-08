@@ -52,13 +52,32 @@ host2 | SUCCESS => {
 ```
 **Task: Use ansible to create a file */tmp/ninja.txt* using ninja user.**   
 Update ansible host file  
-> [appserver]
-> host2 ansible_host=13.126.138.153
-> 
-> [appserver:vars]
-> ansible_ssh_user=ninja
-> ansible_ssh_private_key_file=/root/.ssh/id_rsa
-> ansible_port=22
+```
+[appserver]
+host2 ansible_host=13.126.138.153
 
+[appserver:vars]
+ansible_ssh_user=ninja
+ansible_ssh_private_key_file=/root/.ssh/id_rsa
+ansible_port=22
+```
+create file now:  
+Ad-hock command: ansible -m file -a "path=/tmp/ninja.txt state=touch mode=u+rw,g-wx,o-rwx owner=ninja group=root" host2  
 
-Ad-Hoc command: 
+Console output:  
+```
+[root@ip-172-31-22-206 .ssh]# ansible -m file -a "path=/tmp/ninja.txt state=touch mode=u+rw,g-wx,o-rwx owner=ninja group=root" host2
+host2 | SUCCESS => {
+    "changed": true,
+    "dest": "/tmp/ninja.txt",
+    "failed": false,
+    "gid": 0,
+    "group": "root",
+    "mode": "0640",
+    "owner": "ninja",
+    "size": 0,
+    "state": "file",
+    "uid": 1011
+}
+```
+
