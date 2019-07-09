@@ -33,10 +33,13 @@ Create property file
 2 = Ninja 
 ```
 Now create  ManageTemplate job as below:  
-![Img](Images/69.jpg)
-![Img](Images/69.jpg)
-![Img](Images/69.jpg)
-![Img](Images/69.jpg)
+![Img](Images/69.png)
+![Img](Images/70.png)
+![Img](Images/71.png)
+![Img](Images/72.png)
+![Img](Images/73.png)
+![Img](Images/74.png)
+![Img](Images/75.png)
 
 
 
