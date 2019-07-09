@@ -27,7 +27,8 @@ Try to reach out all app servers using ansible ping command
 Try to reach out all db servers using ansible ping command
 Try to reach out all zone A servers using ansible ping command
 Try to reach out all Zone B servers using ansible ping command
-Submit your inventory file as solution  
+Submit your inventory file as solution    
+
 ---------------------------------------------------------------------------------------------------------------------------------  
 **Host**  
 ```
