@@ -30,7 +30,7 @@ Try to reach out all Zone B servers using ansible ping command
 Submit your inventory file as solution    
 
 ---------------------------------------------------------------------------------------------------------------------------------  
-**Host**  
+**Hosts**  
 ```
 [webserver_zone_A]
 host1 ansible_host=13.234.66.243 ansible_ssh_user=web ansible_port=22
