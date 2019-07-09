@@ -20,24 +20,22 @@ Created 5 different views DEV, QA, UAT, PT, PROD and put each projects correspon
 
 **Task**
 
-Create a Jenkins job(ManageTemplate) that will take a template file, property file(value of variables used in template file) and location as input and then create a file in local system.
+**Create a Jenkins job(ManageTemplate) that will take a template file, property file(value of variables used in template file) and location as input and then create a file in local system.**  
+Create template.sh  
+```
+#!/bin/bash  
+echo "My name is $1"  
+echo "I am a devops $2"  
+```
+Create property file  
+```
+1 = Abhishek  
+2 = Ninja 
+```
+Now create  ManageTemplate job as below:  
 
 
 
-Modify ManageTemplate jenkins job to take remote system IP as input to create the file.
-
-Modify ManageTemplate jenkins job to take additional parameters for file to be managed such as:
-
-permission
-owner of file
-group owner of file
-
-
-Modify ManageTemplate jenkins job where a drop down will be provided of remote systems to be managed.
-Modify ManageTemplate jenkins job where checkboxes are provided for multiple remote systems.
-Modify ManageTemplate jenkins job which will take a meta file as an input in below format
-host, ip, user, private_key_file, local_template_file_location, local_property_file_location, remote_file_location, file_permission(optional), file_owner(optional), group_owner(optional)
-the above said file can have 1 or more entries
 
 
 
