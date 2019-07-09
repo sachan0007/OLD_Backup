@@ -1,9 +1,9 @@
 
 
 
-
 Console output:  
 
+```
 [root@ip-172-31-22-206 .ssh]# ansible webserver
 host1 | SUCCESS => {
     "changed": false,
@@ -69,3 +69,4 @@ host4 | SUCCESS => {
     "failed": false,
     "ping": "pong"
 }
+```
