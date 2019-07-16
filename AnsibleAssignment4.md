@@ -30,13 +30,13 @@ Verify:
 uid=1007(test) gid=1008(test1) groups=1008(test1)
 ```
 -------------------------------------------------------------------------------  
-**Write a playbook to fetch system info like
-Hostname
-IP addresses (public, private)
-Operating System
-RAM information (total, used, free)
-Disk information (total,used, free)
-Available Network Devices.**
+**Write a playbook to fetch system info like  
+Hostname  
+IP addresses (public, private)  
+Operating System  
+RAM information (total, used, free)  
+Disk information (total,used, free)  
+Available Network Devices.**  
 
 
 
