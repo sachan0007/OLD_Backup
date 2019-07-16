@@ -54,12 +54,12 @@ access_log  /var/log/nginx/$http_host.access.log  main;
 curl techprimosoultions.com  
 curl opstree.com  
 
-![Img](Images/77.png) 
+![Img](Images/77.jpg) 
 
 ansible -m cron -a "name=updateCronOpstree minute=30 hour=9 job='truncate -s 0 /var/log/nginx/opstree.com.access.log'" ninjas -b  
 ansible -m cron -a "name=updateCronOpstree minute=30 hour=9 job='truncate -s 0 /var/log/nginx/techprimosoultions.com.access.log'" ninjas -b  
 
-![Img](Images/78.png) 
+![Img](Images/78.jpg) 
 
 
 
