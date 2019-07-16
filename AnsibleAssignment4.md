@@ -24,6 +24,20 @@ Create a group and add user into that group.**
       group: test1
     become: yes
 ```
+Verify:  
+```
+[root@ip-172-31-13-124 nginx]# id test
+uid=1007(test) gid=1008(test1) groups=1008(test1)
+```
+-------------------------------------------------------------------------------  
+**Write a playbook to fetch system info like
+Hostname
+IP addresses (public, private)
+Operating System
+RAM information (total, used, free)
+Disk information (total,used, free)
+Available Network Devices.**
+
 
 
 
