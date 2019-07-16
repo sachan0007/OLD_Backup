@@ -47,7 +47,12 @@ $ ansible -m git -a "repo=https://github.com/cloudacademy/static-website-example
 
 $ ansible -m service -a "name=nginx state=restarted" ninja -b  
 
-![Img](Images/76.png)
+![Img](Images/76.png)  
+
+access_log  /var/log/nginx/$http_host.access.log  main;  
+
+curl techprimosoultions.com  
+curl opstree.com  
 
 
 
