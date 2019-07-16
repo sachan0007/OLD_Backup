@@ -3,10 +3,9 @@ Home directory as /home/username
 Provide shell /bin/bash  
 Create a group and add user into that group.**
 
+```
 ---
 - hosts: ninjas
-  vars:
-    http_port: 80
   tasks:
   - name: Create user test with shell and home
     user:
@@ -24,5 +23,7 @@ Create a group and add user into that group.**
       name: test
       group: test1
     become: yes
+```
+
 
 
