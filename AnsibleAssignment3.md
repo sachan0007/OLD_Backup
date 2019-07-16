@@ -47,7 +47,7 @@ $ ansible -m git -a "repo=https://github.com/cloudacademy/static-website-example
 
 $ ansible -m service -a "name=nginx state=restarted" ninja -b  
 
-
+![Img](Images/76.png)
 
 
 
