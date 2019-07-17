@@ -36,7 +36,9 @@ IP addresses (public, private)
 Operating System  
 RAM information (total, used, free)  
 Disk information (total,used, free)  
-Available Network Devices. **  
+Available Network Devices.**
+
+
 
 ```
 ---
@@ -66,7 +68,8 @@ Available Network Devices. **
 Start nginx service  
 Stop nginx service  
 Along with hosting a custom HTML Page on it displaying your Name and system information which we are fetching above.  
-Restart nginx service **  
+Restart nginx service**
+
 
 ```
 ---
