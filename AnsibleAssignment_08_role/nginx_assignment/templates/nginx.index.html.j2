@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello from "{{ welcome }}"</h1>
+<h2>List of informations</h2>
+
+<ul>
+  <li>Hostname: {{ ansible_hostname }}</li>
+  <li>PrivateIP: {{ ansible_all_ipv4_addresses }}</li>
+  <li>OperatingSystem: {{ ansible_os_family }}</li>
+  <li>DiscInformation: {{ ansible_devices | to_nice_json }}</li>
+  <li>NetworkInterfaces: {{ ansible_interfaces }}</li>
+</ul>  
+</body>
+</html>

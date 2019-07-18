@@ -1,0 +1,22 @@
+---
+- fail:
+    msg: OS not supported
+  when: ansible_os_family  != "RedHat"
+- name: be sure nginx is installed
+  yum:
+    name: nginx
+    state: present
+  become: yes
+- name: write the nginx index.html file
+  template:
+    src: nginx.index.html.j2
+    dest: /usr/share/nginx/html/index.html
+  become: yes
+  notify: restart nginx
+- name: be sure nginx is configured
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  become: yes
+  notify: restart nginx
+
