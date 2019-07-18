@@ -80,6 +80,53 @@ Update your playbook to externalise your tasks.**
         state: restarted
       become: yes
 ```
+Consol output:-  
+
+```
+[root@ip-172-31-22-206 ansible]# ansible-playbook playbook4.yml
+Which user you want to create?:
+
+PLAY [ninjas] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [ninjas]
+
+TASK [ensure apache is at the latest version] **********************************
+ok: [ninjas]
+
+TASK [write the apache index.html file] ****************************************
+ok: [ninjas]
+
+TASK [install git, vim and ntp] ************************************************
+ok: [ninjas] => (item=[u'git', u'vim', u'ntp'])
+
+TASK [Add the user "sensei"] ***************************************************
+ok: [ninjas]
+
+TASK [Check if group exists] ***************************************************
+changed: [ninjas]
+
+TASK [Add "sensei" and ninja to opstree if group exists] ***********************
+skipping: [ninjas] => (item=sensei)
+skipping: [ninjas] => (item=ninja1)
+
+TASK [Ensure group "devops" exists] ********************************************
+ok: [ninjas]
+
+TASK [Add ninja and "sensei" to devops] ****************************************
+ok: [ninjas] => (item=sensei)
+ok: [ninjas] => (item=ninja1)
+
+TASK [Add the users "[u'abhishek', u'devesh', u'srishti']"] ********************
+ok: [ninjas] => (item=abhishek)
+ok: [ninjas] => (item=devesh)
+ok: [ninjas] => (item=srishti)
+
+PLAY RECAP *********************************************************************
+ninjas                     : ok=9    changed=1    unreachable=0    failed=0
+
+```
+
 
 To Externalise (include/import):  
 
