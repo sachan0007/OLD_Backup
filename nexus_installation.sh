@@ -1,5 +1,6 @@
 #!/bin/bash
 version=3.17.0-01
+DIR="/opt/nexus"
 getPackageManager()
 {
     if ! which apt
@@ -16,8 +17,7 @@ getPackageManager()
     }
 check_package ()
 {
-  yum list installed | grep nexus > /dev/null
-  if [ $? -eq 0 ];
+  if [ -d "$DIR" ];
    then echo "yes"
   fi
 }
@@ -33,11 +33,11 @@ install_package_yum ()
     tar -zxvf  nexus-$version-unix.tar.gz
     mv /opt/nexus-$version /opt/nexus
     useradd nexus
-    chown -R nexus:nexus /opt/nexus
+    chown -R nexus:nexus $DIR
     chown -R nexus:nexus /opt/sonatype-work
-    echo "run_as_user="nexus"" > /opt/nexus/bin/nexus.rc
+    echo "run_as_user="nexus"" > $DIR/bin/nexus.rc
     sh -c "echo 'nexus   ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers"
-    ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+    ln -s $DIR/bin/nexus /etc/init.d/nexus
     cd /etc/init.d
     chkconfig --level 345 nexus on
     /etc/init.d/nexus start
@@ -56,11 +56,11 @@ install_package_apt ()
     tar -zxvf  nexus-$version-unix.tar.gz
     mv /opt/nexus-$version /opt/nexus
     adduser nexus
-    chown -R nexus:nexus /opt/nexus
+    chown -R nexus:nexus $DIR
     chown -R nexus:nexus /opt/sonatype-work
-    echo "run_as_user="nexus"" > /opt/nexus/bin/nexus.rc
+    echo "run_as_user="nexus"" > $DIR/bin/nexus.rc
     sh -c "echo 'nexus   ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers"
-    ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+    ln -s $DIR/bin/nexus /etc/init.d/nexus
     cd /etc/init.d
     chkconfig --level 345 nexus on
     /etc/init.d/nexus start
