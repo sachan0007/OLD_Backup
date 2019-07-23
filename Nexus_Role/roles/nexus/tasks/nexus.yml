@@ -39,6 +39,13 @@
     dest: /etc/systemd/system/nexus.service
     owner: nexus
     group: nexus
+- name: "Sending nexus.vmoptions with Xms {{ xms }} and Xmx {{ xmx }}"
+  template:
+    src: nexus.vmoptions.j2
+    dest: "{{ nexus_installation_dir }}/nexus/bin/nexus.vmoptions"
+    owner: nexus
+    group: nexus
+  notify: restart nexus
 - name: Make sure nexus service is running and enable after daemon reload.
   systemd:
     daemon_reload: yes

@@ -1,2 +1,5 @@
 ---
-# handlers file for nexus
+- name: restart nexus
+  systemd:
+    state: restarted
+    name: nexus
