@@ -1,4 +1,5 @@
 #!/bin/bash
+version=3.17.0-01
 getPackageManager()
 {
     if ! which apt
@@ -28,11 +29,12 @@ install_package_yum ()
   else
     yum -y install java-1.8.0-openjdk
     cd /opt
-    wget https://download.sonatype.com/nexus/3/nexus-3.17.0-01-unix.tar.gz
-    tar -zxvf  nexus-3.17.0-01-unix.tar.gz
-    mv /opt/nexus-3.17.0-01 /opt/nexus
+    wget https://download.sonatype.com/nexus/3/nexus-$version-unix.tar.gz
+    tar -zxvf  nexus-$version-unix.tar.gz
+    mv /opt/nexus-$version /opt/nexus
     useradd nexus
     chown -R nexus:nexus /opt/nexus
+    chown -R nexus:nexus /opt/sonatype-work
     echo "run_as_user="nexus"" > /opt/nexus/bin/nexus.rc
     sh -c "echo 'nexus   ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers"
     ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
@@ -50,11 +52,12 @@ install_package_apt ()
   else
     apt-get -y install java-1.8.0-openjdk
     cd /opt
-    wget https://download.sonatype.com/nexus/3/nexus-3.17.0-01-unix.tar.gz
-    tar -zxvf  nexus-3.17.0-01-unix.tar.gz
-    mv /opt/nexus-3.17.0-01 /opt/nexus
+    wget https://download.sonatype.com/nexus/3/nexus-$version-unix.tar.gz
+    tar -zxvf  nexus-$version-unix.tar.gz
+    mv /opt/nexus-$version /opt/nexus
     adduser nexus
     chown -R nexus:nexus /opt/nexus
+    chown -R nexus:nexus /opt/sonatype-work
     echo "run_as_user="nexus"" > /opt/nexus/bin/nexus.rc
     sh -c "echo 'nexus   ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers"
     ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
