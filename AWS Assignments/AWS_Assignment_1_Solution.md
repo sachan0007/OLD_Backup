@@ -5,6 +5,7 @@ aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type
 
 
 
+```
 PS C:\Users\abhisheks8\.aws> aws ec2 run-instances --image-id ami-028b3bf1662e6082f --count 1 --instance-type t2.micro --key-name NewKeyPair --security-group-ids sg-03449092e569f8ca8 --subnet-id subnet-04910167cace25904 --associate-public-ip-address
 {
     "Groups": [],
@@ -101,10 +102,12 @@ PS C:\Users\abhisheks8\.aws> aws ec2 run-instances --image-id ami-028b3bf1662e60
     "ReservationId": "r-0baec00d842aed44f"
 }
 
+```
 
 
 
 
+```
 PS C:\Users\abhisheks8\.aws> aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type t2.micro -
 -key-name NewKeyPair --security-group-ids sg-0baacf0b18161c7a7 --subnet-id subnet-0468e71ec6139e19b
 {
@@ -200,6 +203,7 @@ PS C:\Users\abhisheks8\.aws> aws ec2 run-instances --image-id ami-0d2692b6acea72
     "OwnerId": "882209190643",
     "ReservationId": "r-02ab4398c30c4f005"
 }
+```
 
 
 
