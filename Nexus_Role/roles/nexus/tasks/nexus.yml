@@ -1,0 +1,54 @@
+---
+- name: Unacrhive the Nexus
+  unarchive:
+    src: "https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/3/nexus-{{ nexus_version }}-unix.tar.gz"
+    dest: "{{ nexus_installation_dir }}"
+    remote_src: yes
+    creates: "{{ nexus_installation_dir }}/nexus"
+- name: Create user accounts nexus:nexus
+  user:
+    name: nexus
+- name: "Allow admin nexus to sudo without a password"
+  lineinfile:
+    dest: "/etc/sudoers" 
+    state: "present"
+    regexp: "^%user"
+    line: "%nexus ALL=(ALL) NOPASSWD: ALL"
+- name: "Create a symbolic link of {{ nexus_installation_dir }}/nexus-{{ nexus_version }} to {{ nexus_installation_dir }}/nexus"
+  file:
+    src: "{{ nexus_installation_dir }}/nexus-{{ nexus_version }}"
+    dest: "{{ nexus_installation_dir }}/nexus"
+    owner: nexus
+    group: nexus
+    state: link
+- name: Change file ownership and group of sonatype-work
+  file:
+    path: "{{ nexus_installation_dir }}/sonatype-work"
+    recurse: yes
+    owner: nexus
+    group: nexus
+- name: Copy a new "nexus.rc file into place, backing up the original if it differs from the copied version
+  copy:
+    src: nexus.rc
+    dest: "{{ nexus_installation_dir }}/nexus/bin/nexus.rc"
+    owner: nexus
+    group: nexus
+- name: Set systemd to run the repository manager service
+  template:
+    src: nexus.service.j2
+    dest: /etc/systemd/system/nexus.service
+    owner: nexus
+    group: nexus
+- name: "Sending nexus.vmoptions with Xms {{ xms }} and Xmx {{ xmx }}"
+  template:
+    src: nexus.vmoptions.j2
+    dest: "{{ nexus_installation_dir }}/nexus/bin/nexus.vmoptions"
+    owner: nexus
+    group: nexus
+  notify: restart nexus
+- name: Make sure nexus service is running and enable after daemon reload.
+  systemd:
+    daemon_reload: yes
+    enabled: yes
+    state: started
+    name: nexus

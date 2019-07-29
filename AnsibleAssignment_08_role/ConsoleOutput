@@ -1,0 +1,27 @@
+[root@ip-172-31-22-206 ansible]# ansible-playbook /etc/ansible/webserver.yml
+Give welcomer's name!!!! [Opstree]:
+Give port for nginx to listen!!! [80]:
+
+PLAY [ninjas] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [ninjas]
+
+TASK [nginx_assignment : fail] *************************************************
+skipping: [ninjas]
+
+TASK [nginx_assignment : be sure nginx is installed] ***************************
+ok: [ninjas]
+
+TASK [nginx_assignment : write the nginx index.html file] **********************
+changed: [ninjas]
+
+TASK [nginx_assignment : be sure nginx is configured] **************************
+ok: [ninjas]
+
+RUNNING HANDLER [nginx_assignment : restart nginx] *****************************
+changed: [ninjas]
+
+PLAY RECAP *********************************************************************
+ninjas                     : ok=5    changed=2    unreachable=0    failed=0
+

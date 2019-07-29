@@ -1,0 +1,18 @@
+---
+- name: Include version-specific variables for CentOS/RHEL.
+  include_vars: "RedHat.yml"
+  when: ansible_os_family == 'CentOS' or
+        ansible_os_family == 'Red Hat Enterprise Linux' or
+        ansible_os_family == 'RedHat'
+- name: Include version-specific variables for Ubuntu.
+  include_vars: "Ubuntu.yml"
+  when: ansible_os_family == 'Ubuntu' or
+        ansible_os_family == 'Debian'
+- name: Ensure Java is installed.
+  package:
+    name: "{{ java_packages }}"
+    state: present
+- name: Setting JAVA_HOME path
+  lineinfile:
+    path: /etc/environment
+    line: 'JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-0.amzn2.x86_64/jre'

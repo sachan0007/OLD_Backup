@@ -1,0 +1,6 @@
+---
+- name: use roles
+  import_tasks: java.yml
+- name: use roles
+  import_tasks: nexus.yml
+
