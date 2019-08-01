@@ -1,4 +1,11 @@
 - hosts: ninjas
   become: true
+  vars_prompt:
+    - name: welcome
+      prompt: "Give welcomer's name!!!!" 
+      default: Opstree
+    - name: port_to_listen
+      prompt: "Give port for nginx to listen!!!"
+      default: 80
   roles:
     - nginx_assignment
