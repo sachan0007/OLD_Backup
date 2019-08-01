@@ -144,8 +144,9 @@ Note that VPC is already created.
 ```
 
 
-aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.96/27 --availability-zone ap-south-1b
+**aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.96/27 --availability-zone ap-south-1b**
 
+```
 {
     "Subnet": {
         "MapPublicIpOnLaunch": false,
@@ -163,9 +164,12 @@ aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.96/27 -
         "AssignIpv6AddressOnCreation": false
     }
 }
+```
 
-aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.128/27 --availability-zone ap-south-1a
 
+**aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.128/27 --availability-zone ap-south-1a**
+
+```
 {
     "Subnet": {
         "MapPublicIpOnLaunch": false,
@@ -183,9 +187,12 @@ aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.128/27 
         "AssignIpv6AddressOnCreation": false
     }
 }
+```
 
-aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.160/27 --availability-zone ap-south-1b
 
+**aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.160/27 --availability-zone ap-south-1b**
+
+```
 {
     "Subnet": {
         "MapPublicIpOnLaunch": false,
@@ -203,10 +210,16 @@ aws ec2 create-subnet --vpc-id vpc-05f9507fbc9dcc1be --cidr-block 10.0.0.160/27 
         "AssignIpv6AddressOnCreation": false
     }
 }
+```
 
 
-Create route Table:
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be
+
+
+*  Create route Table:
+
+**aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be**
+
+```
 {
     "RouteTable": {
         "Associations": [],
@@ -225,7 +238,11 @@ Create route Table:
         "OwnerId": "882209190643"
     }
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be**
+
+```
 {
     "RouteTable": {
         "Associations": [],
@@ -244,7 +261,10 @@ Create route Table:
         "OwnerId": "882209190643"
     }
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be**
+```
 {
     "RouteTable": {
         "Associations": [],
@@ -263,7 +283,10 @@ Create route Table:
         "OwnerId": "882209190643"
     }
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-route-table --vpc-id vpc-05f9507fbc9dcc1be**
+```
 {
     "RouteTable": {
         "Associations": [],
@@ -282,9 +305,14 @@ Create route Table:
         "OwnerId": "882209190643"
     }
 }
+```
 
-Create IG:
-aws ec2 create-internet-gateway
+
+
+*  Create IG:
+
+**aws ec2 create-internet-gateway**
+```
 {
     "InternetGateway": {
         "Tags": [],
@@ -292,28 +320,43 @@ aws ec2 create-internet-gateway
         "InternetGatewayId": "igw-0728c6083423c4553"
     }
 }
+```
 
-Associate IG:
-aws ec2 attach-internet-gateway --internet-gateway-id igw-0728c6083423c4553 --vpc-id vpc-05f9507fbc9dcc1be
 
-Create EIP:
-[root@ip-172-31-22-206 ec2-user]# aws ec2 allocate-address
+
+*  Associate IG:
+
+**aws ec2 attach-internet-gateway --internet-gateway-id igw-0728c6083423c4553 --vpc-id vpc-05f9507fbc9dcc1be**
+
+
+*  Create EIP:
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 allocate-address**
+```
 {
     "PublicIp": "13.235.164.229",
     "Domain": "vpc",
     "AllocationId": "eipalloc-0b2db31f42f825572",
     "PublicIpv4Pool": "amazon"
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 allocate-address
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 allocate-address**
+```
 {
     "PublicIp": "13.235.204.39",
     "Domain": "vpc",
     "AllocationId": "eipalloc-069587acd7a69f224",
     "PublicIpv4Pool": "amazon"
 }
+```
 
-Create NAT gateway:
-aws ec2 create-nat-gateway --subnet-id subnet-07772200af19db730 --allocation-id eipalloc-0b2db31f42f825572
+
+
+*  Create NAT gateway:
+
+**aws ec2 create-nat-gateway --subnet-id subnet-07772200af19db730 --allocation-id eipalloc-0b2db31f42f825572**
+```
 {
     "NatGateway": {
         "NatGatewayAddresses": [
@@ -328,9 +371,12 @@ aws ec2 create-nat-gateway --subnet-id subnet-07772200af19db730 --allocation-id 
         "CreateTime": "2019-07-31T16:31:53.000Z"
     }
 }
+```
 
 
-aws ec2 create-nat-gateway --subnet-id subnet-07c13ba48e40355b6 --allocation-id eipalloc-069587acd7a69f224
+
+**aws ec2 create-nat-gateway --subnet-id subnet-07c13ba48e40355b6 --allocation-id eipalloc-069587acd7a69f224**
+```
 {
     "NatGateway": {
         "NatGatewayAddresses": [
@@ -345,26 +391,42 @@ aws ec2 create-nat-gateway --subnet-id subnet-07c13ba48e40355b6 --allocation-id 
         "CreateTime": "2019-07-31T16:33:20.000Z"
     }
 }
+```
 
 
-Create Route:
-aws ec2 create-route --route-table-id rtb-09ddbcbb05c547821 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-0728c6083423c4553
 
+
+*  Create Route:
+
+**aws ec2 create-route --route-table-id rtb-09ddbcbb05c547821 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-0728c6083423c4553**
+
+```
 {
     "Return": true
 }
+```
 
-aws ec2 create-route --route-table-id rtb-0ff3ad7194ede610f --destination-cidr-block 0.0.0.0/0 --gateway-id nat-0ac1b8733eb0762f0
+
+**aws ec2 create-route --route-table-id rtb-0ff3ad7194ede610f --destination-cidr-block 0.0.0.0/0 --gateway-id nat-0ac1b8733eb0762f0**
+```
 {
     "Return": true
 }
+```
 
-aws ec2 create-route --route-table-id rtb-03e242c2c8a707b27 --destination-cidr-block 0.0.0.0/0 --gateway-id nat-06bc3336557068fd0
+
+**aws ec2 create-route --route-table-id rtb-03e242c2c8a707b27 --destination-cidr-block 0.0.0.0/0 --gateway-id nat-06bc3336557068fd0**
+```
 {
     "Return": true
 }
+```
 
-Associate Route table to subnets:
+
+
+*  Associate Route table to subnets:
+
+```
 [root@ip-172-31-22-206 ec2-user]# aws ec2 associate-route-table --route-table-id rtb-09ddbcbb05c547821 --subnet-id subnet-07772200af19db730 --subnet-id subnet-07c13ba48e40355b6
 {
     "AssociationId": "rtbassoc-037069af64778115d"
@@ -389,36 +451,49 @@ Associate Route table to subnets:
 {
     "AssociationId": "rtbassoc-0e02549b55b64d9c2"
 }
+```
 
 
 
-Create Security Group:
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Public --description "Public" --vpc-id vpc-05f9507fbc9dcc1be
 
-An error occurred (InvalidGroup.Duplicate) when calling the CreateSecurityGroup operation: The security group 'Public' already exists for VPC 'vpc-05f9507fbc9dcc1be'
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Public --description "Public" --vpc-id vpc-05f9507fbc9dcc1be
+*  Create Security Group:
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Public --description "Public" --vpc-id vpc-05f9507fbc9dcc1be**
+```
 {
     "GroupId": "sg-0d45e0b943bd38fed"
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Private --description "Private" --vpc-id vpc-05f9507fbc9dcc1be
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Private --description "Private" --vpc-id vpc-05f9507fbc9dcc1be**
+```
 {
     "GroupId": "sg-06d2041e3b087dec7"
 }
-[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Protected --description "Protected" --vpc-id vpc-05f9507fbc9dcc1be
+```
+
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 create-security-group --group-name Protected --description "Protected" --vpc-id vpc-05f9507fbc9dcc1be**
+```
 {
     "GroupId": "sg-0024ff50bf2c359c1"
 }
+```
 
 
-Configure Security Group:
 
-[root@ip-172-31-22-206 ec2-user]# aws ec2 authorize-security-group-ingress --group-id sg-0d45e0b943bd38fed --protocol tcp --port 80 --cidr 0.0.0.0/0
 
-[root@ip-172-31-22-206 ec2-user]# aws ec2 authorize-security-group-ingress --group-id sg-06d2041e3b087dec7 --protocol tcp --port 80 --source-group sg-0d45e0b943bd38fed
+*  Configure Security Group:
 
-Launch 2 instances, 1 in each private subnet, along with launch script:
-aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type t2.micro --key-name NewKeyPair --security-group-ids sg-06d2041e3b087dec7 --subnet-id subnet-059d7820aac3ad964 --user-data file://launch_script_1.txt
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 authorize-security-group-ingress --group-id sg-0d45e0b943bd38fed --protocol tcp --port 80 --cidr 0.0.0.0/0**
 
+**[root@ip-172-31-22-206 ec2-user]# aws ec2 authorize-security-group-ingress --group-id sg-06d2041e3b087dec7 --protocol tcp --port 80 --source-group sg-0d45e0b943bd38fed**
+
+
+*  Launch 2 instances, 1 in each private subnet, along with launch script:
+
+**aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type t2.micro --key-name NewKeyPair --security-group-ids sg-06d2041e3b087dec7 --subnet-id subnet-059d7820aac3ad964 --user-data file://launch_script_1.txt**
+
+```
 {
     "Instances": [
         {
@@ -512,10 +587,13 @@ aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type
     "Groups": [],
     "OwnerId": "882209190643"
 }
+```
 
 
-aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type t2.micro --key-name NewKeyPair --security-group-ids sg-06d2041e3b087dec7 --subnet-id subnet-0a8a4f0d3657c60cf --user-data file://launch_script_2.txt
 
+**aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type t2.micro --key-name NewKeyPair --security-group-ids sg-06d2041e3b087dec7 --subnet-id subnet-0a8a4f0d3657c60cf --user-data file://launch_script_2.txt**
+
+```
 {
     "Instances": [
         {
@@ -609,17 +687,27 @@ aws ec2 run-instances --image-id ami-0d2692b6acea72ee6 --count 1 --instance-type
     "Groups": [],
     "OwnerId": "882209190643"
 }
+```
 
-Create Classic ELB:
-aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-07772200af19db730 subnet-07c13ba48e40355b6 --security-groups sg-0d45e0b943bd38fed
 
+
+*  Create Classic ELB:
+
+**aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-07772200af19db730 subnet-07c13ba48e40355b6 --security-groups sg-0d45e0b943bd38fed**
+
+```
 {
     "DNSName": "my-load-balancer-508971471.ap-south-1.elb.amazonaws.com"
 }
+```
 
-Register-instances-with-load-balancer:
-aws elb register-instances-with-load-balancer --load-balancer-name my-load-balancer --instances i-013dfbc1f32df3c07 i-054341c4a067cdd07
 
+
+*  Register-instances-with-load-balancer:
+
+**aws elb register-instances-with-load-balancer --load-balancer-name my-load-balancer --instances i-013dfbc1f32df3c07 i-054341c4a067cdd07**
+
+```
 {
     "Instances": [
         {
@@ -630,9 +718,11 @@ aws elb register-instances-with-load-balancer --load-balancer-name my-load-balan
         }
     ]
 }
+```
 
-ALL DONE:::::------
-http://my-load-balancer-508971471.ap-south-1.elb.amazonaws.com/phpinfo.php
+
+**ALL DONE:::::------**
+*http://my-load-balancer-508971471.ap-south-1.elb.amazonaws.com/phpinfo.php*
 
 
 
