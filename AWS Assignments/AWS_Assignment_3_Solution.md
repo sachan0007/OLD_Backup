@@ -87,3 +87,53 @@ You can check was performed at startup in:-
 
 ----------------------------------------------------------------------  
 
+Task 3:  
+Pre: Create an IAM User with Acess and Secret Key (policy:AmazonEC2FullAccess or You can create custom policy as below)  
+
+
+
+```
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "VisualEditor0",
+"Effect": "Allow",
+"Action": [
+"ec2:StartInstances",
+"ec2:StopInstances"
+],
+"Resource": "*"
+}
+]
+}
+```
+AWS cli should be configures with jenkins user in jenkins server, if not follow as below:  
+```
+$ sudo apt-/yum install awscli
+# sudo su – jenkins
+$ aws configure
+```
+Create Jenkins Job to start and Stop Ec2 instance  
+With:  
+String parameter: InstanceID
+Choice parameter: State Choices: Start and Stop  
+
+Build:  
+```
+if [ "$State" = "Start" ]
+then
+aws ec2 start-instances --instance-ids $InstanceID
+echo Instance $InstanceID Started
+elif [ "$State" = "Stop" ]
+then
+aws ec2 stop-instances --instance-ids $InstanceID
+echo Instance $InstanceID Stopped
+fi
+```
+
+![Img](Images2/22.jpg)
+![Img](Images2/23.jpg)
+![Img](Images2/24.jpg)
+![Img](Images2/25.jpg)
+![Img](Images2/26.jpg)
