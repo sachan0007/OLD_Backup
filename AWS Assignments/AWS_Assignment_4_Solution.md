@@ -40,7 +40,7 @@ Script execution Output:-
 
 https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/AWS_Assignment_4_Script.sh  
 
-1) sh AWS_Assignment_4_Script.sh start (When all are already start)  
+**1) sh AWS_Assignment_4_Script.sh start (When all are already start) ** 
 
 ```
 Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
@@ -50,7 +50,7 @@ Mydb instance is already running.
 Myapp instance is already running.
 Nginx instance is already running.
 ```
-2) sh AWS_Assignment_4_Script.sh stop (When all are already start)  
+**2) sh AWS_Assignment_4_Script.sh stop (When all are already start)  **
 
 ```
 Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
@@ -105,7 +105,7 @@ stop mydb instance...
     ]
 }
 ```
-3) sh AWS_Assignment_4_Script.sh stop (When all are already stopped)  
+**3) sh AWS_Assignment_4_Script.sh stop (When all are already stopped)  **
 
 ```
 Nginx Instance Status & ID: [stopped][i-0c217c6076ba00e78]
@@ -116,7 +116,7 @@ Myapp instance is already stopped.
 Mydb instance is already stopped.
 ```
 
-4) sh AWS_Assignment_4_Script.sh start (When all are already stopped)  
+**4) sh AWS_Assignment_4_Script.sh start (When all are already stopped)  **
 
 ```
 Nginx Instance Status & ID: [stopped][i-0c217c6076ba00e78]
@@ -172,7 +172,7 @@ start nginx instance...
 }
 ```
 
-5) sh AWS_Assignment_4_Script.sh status (When all are already stopped)  
+**5) sh AWS_Assignment_4_Script.sh status (When all are already stopped)  **
 
 ```
 Nginx Instance Status & ID: [stopped][i-0c217c6076ba00e78]
@@ -181,7 +181,7 @@ Mydb Instance Status & ID : [stopped][i-05678febf2308a817]
 Status Check only.
 ```
 
-6) sh AWS_Assignment_4_Script.sh status (When all are already started)  
+**6) sh AWS_Assignment_4_Script.sh status (When all are already started)  **
 
 ```
 Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
