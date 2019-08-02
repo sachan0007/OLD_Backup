@@ -172,5 +172,23 @@ start nginx instance...
 }
 ```
 
+5) sh AWS_Assignment_4_Script.sh status (When all are already stopped)  
+
+```
+Nginx Instance Status & ID: [stopped][i-0c217c6076ba00e78]
+Myapp Instance Status & ID : [stopped][i-0f0addd171a316cfa]
+Mydb Instance Status & ID : [stopped][i-05678febf2308a817]
+Status Check only.
+```
+
+6) sh AWS_Assignment_4_Script.sh status (When all are already started)  
+
+```
+Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
+Myapp Instance Status & ID : [running][i-0f0addd171a316cfa]
+Mydb Instance Status & ID : [running][i-05678febf2308a817]
+Status Check only.
+```
+
 
 
