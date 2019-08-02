@@ -116,7 +116,7 @@ $ aws configure
 ```
 Create Jenkins Job to start and Stop Ec2 instance  
 With:  
-String parameter: InstanceID
+String parameter: InstanceID  
 Choice parameter: State Choices: Start and Stop  
 
 Build:  
