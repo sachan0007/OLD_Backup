@@ -76,3 +76,4 @@ pip install ansible
 sudo yum install git -y  
 /usr/local/bin/ansible-pull -U https://github.com/sachan007/ansible-pull.git -i hosts main.yml  
 
+/var/log/cloud-init-output.log  
