@@ -40,7 +40,7 @@ Script execution Output:-
 
 https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/AWS_Assignment_4_Script.sh  
 
-**1) sh AWS_Assignment_4_Script.sh start (When all are already start) ** 
+**1) sh AWS_Assignment_4_Script.sh start (When all are already start)**   
 
 ```
 Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
@@ -50,7 +50,7 @@ Mydb instance is already running.
 Myapp instance is already running.
 Nginx instance is already running.
 ```
-**2) sh AWS_Assignment_4_Script.sh stop (When all are already start)  **
+**2) sh AWS_Assignment_4_Script.sh stop (When all are already start)**  
 
 ```
 Nginx Instance Status & ID: [running][i-0c217c6076ba00e78]
