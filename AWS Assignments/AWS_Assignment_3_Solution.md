@@ -67,3 +67,8 @@ Start bad server and login... BANG....it works!!!
 
 -------------------------------------------------------------------------  
 
+Task 2:  
+
+*Created role and placed in `https://github.com/sachan007/ansible-pull.git `   
+
+
