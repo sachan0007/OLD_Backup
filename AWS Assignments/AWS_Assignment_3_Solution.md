@@ -1,4 +1,4 @@
-AWS Assignment Day-3
+ AWS Assignment Day-3
 
 
 Task 1
@@ -37,6 +37,31 @@ write a jobDsl to start stop this instance through jenkins
 NOTE!
 
 Make Documentation
-Don't commit and push your AWS Keys on any public repository  
+Don't commit and push your AWS Keys on any public repository    
+
 ----------------------------------------------------------------------  
+
+Task1:  
+Start a other Debug Linux Instance.  
+Make sure that it is running in the same Availability Zone as the sacrificial server.  
+Fix the bad Server:  
+Stop but do not terminate the bad server, detach bad server root drive and attach it to debug server,  
+then mount its root disk drive as a normal data drive on the debug server, to get access to the sudoer file.   
+Rename sudoers.bkp to sudoers.  
+
+```
+ $ cd /
+ $ sudo mkdir bad
+ $ sudo mount /dev/xvdf /bad 
+```
+```
+ $ cd /bad
+ $ ls 
+```
+sudo mv /etc/sudoers.bkp /etc/sudoers  
+
+Detach EBS from debug server and attach it again to bad server.  
+Start bad server and login... BANG....it works!!!  
+
+-------------------------------------------------------------------------  
 
