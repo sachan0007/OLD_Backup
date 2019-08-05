@@ -198,6 +198,7 @@ Task 3:
 *  Create an IAM role in your others account with policy you want to grant access for.  
 
 ![Img](Images3/1.png)  
+![Img](Images3/1.5.png)  
 
 
 *  Create a user in your Your account to assume that IAM role.  
