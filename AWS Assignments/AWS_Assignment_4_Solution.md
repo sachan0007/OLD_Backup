@@ -194,8 +194,22 @@ Status Check only.
 
 Task 3:  
 
-Create an IAM role in your others account with policy you want to grant access for.  
-Create a user in your Your account to assume that IAM role.  
-Create new policy using other account role arn and attach it to your user  
-Establish cross-account trust and access from the user in the your account to the role in the other account.  
 
+*  Create an IAM role in your others account with policy you want to grant access for.  
+
+![Img](Images3/1.png)  
+
+
+*  Create a user in your Your account to assume that IAM role.  
+
+
+
+*  Create new policy using other account role arn and attach it to your user  
+
+![Img](Images3/2.png)  
+
+
+*  Establish cross-account trust and access from the user in the your account to the role in the other account.  
+
+![Img](Images3/3.png)  
+![Img](Images3/4.png)  
