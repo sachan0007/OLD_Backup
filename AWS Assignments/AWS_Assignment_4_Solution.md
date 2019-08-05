@@ -190,5 +190,12 @@ Mydb Instance Status & ID : [running][i-05678febf2308a817]
 Status Check only.
 ```
 
+-----------------------------------------------------------------------  
 
+Task 3:  
+
+Create an IAM role in your others account with policy you want to grant access for.  
+Create a user in your Your account to assume that IAM role.  
+Create new policy using other account role arn and attach it to your user  
+Establish cross-account trust and access from the user in the your account to the role in the other account.  
 
