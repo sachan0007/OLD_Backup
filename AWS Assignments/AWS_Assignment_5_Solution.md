@@ -152,6 +152,16 @@ ssh-add mykey.pem
 Execute ec2.py script to see the Dynamic inventory  
 /path/to/ec2.py --list    
 
+main.yml  
+```
+- hosts: "{{ host }}"
+  become: true
+  roles:
+    - role: nginx-aws
+```
+
+
+
 Run to execute role:  
 **ansible-playbook -i ec2.py deployment.yml -e "host=tag_Name_aws_demo" -u ec2-user**
 
