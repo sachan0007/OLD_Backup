@@ -122,3 +122,11 @@ https://aws.amazon.com/amazon-linux-2/
 Run "sudo yum update" to apply all updates.
 ```
 
+------------------------------------------------------------------------  
+
+Optional task:  
+
+Create 2 files at /etc/ansible  
+[ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.ini)  
+[ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.py)    
+
