@@ -126,7 +126,56 @@ Run "sudo yum update" to apply all updates.
 
 Optional task:  
 
+Can follow: https://gist.github.com/rgodishela/318b60d36fa9bb36ef932784436d053f  
+
+
+
+Pre: python and boto  
+
 Create 2 files at /etc/ansible  
 [ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.ini)  
 [ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.py)    
+
+chmod +x /path/to/ec2.py  
+chmod +x /path/to/ec2.ini  
+
+Export these or also can be mentioned in Command line:  
+
+```
+export AWS_ACCESS_KEY_ID=A
+export AWS_SECRET_ACCESS_KEY=J4APUMp9A5Co1+
+export ANSIBLE_HOSTS=/etc/ansible/ec2.py
+export EC2_INI_PATH=/etc/ansible/ec2.ini
+ssh-agent bash
+ssh-add mykey.pem
+```
+Execute ec2.py script to see the Dynamic inventory  
+/path/to/ec2.py --list    
+
+Run to execute role:  
+**ansible-playbook -i ec2.py deployment.yml -e "host=tag_Name_aws_demo" -u ec2-user**
+
+Check the systax, tag was-- Name=aws-demo, but you have to give **tag_Name_aws_demo**  
+
+```
+PLAY [tag_Name_aws_demo] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [13.232.107.102]
+
+TASK [nginx-aws : be sure nginx is installed] **********************************
+ok: [13.232.107.102]
+
+TASK [nginx-aws : be sure nginx is configured] *********************************
+ok: [13.232.107.102]
+
+TASK [nginx-aws : Copy html] ***************************************************
+ok: [13.232.107.102]
+
+TASK [nginx-aws : be sure nginx is running and enabled] ************************
+ok: [13.232.107.102]
+
+PLAY RECAP *********************************************************************
+13.232.107.102             : ok=5    changed=0    unreachable=0    failed=0
+```
 
