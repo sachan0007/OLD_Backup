@@ -126,7 +126,9 @@ Run "sudo yum update" to apply all updates.
 
 Optional task:  
 
-Can follow: https://gist.github.com/rgodishela/318b60d36fa9bb36ef932784436d053f  
+Can follow: 
+https://gist.github.com/rgodishela/318b60d36fa9bb36ef932784436d053f    
+https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/  
 
 
 
