@@ -47,7 +47,9 @@ Make Documentation
 -------------------------------------------------------------------    
 
 Users:  
-Rajat: With user policy as bolow:  
+
+1) Rajat: With user policy as bolow:  
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -91,3 +93,15 @@ Rajat: With user policy as bolow:
         }
     ]
 }
+```
+2) Tejasvi and Priyanka jugran in same GROUP: With AdministratorAccess policy attached.  
+3) priyanka sharama: Will use role to run athena queries.  
+
+The user or role you use to run the Athena query must have permission to 
+
+* run queries in Athena,  
+* access the catalog objects (i.e. databases and tables)  
+* access to an S3 bucket where query results can be stored, and  
+* access to th
+* S3 bucket and objects that need to be read to run the query.  
+
