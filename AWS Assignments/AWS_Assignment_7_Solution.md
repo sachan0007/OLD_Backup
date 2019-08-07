@@ -48,7 +48,7 @@ Make Documentation
 
 Users:  
 
-1) Rajat: With user policy as bolow:  
+1) Rajat: In "Devops" group With user policy as bolow:  
 ```
 {
     "Version": "2012-10-17",
@@ -95,13 +95,45 @@ Users:
 }
 ```
 2) Tejasvi and Priyanka jugran in same GROUP: With AdministratorAccess policy attached.  
-3) priyanka sharama: Will use role to run athena queries.  
+3) priyanka sharama (From her account only): Will use role to run athena queries.  
 
-The user or role you use to run the Athena query must have permission to 
+The role she will use to run the Athena query must have permission to 
 
 * run queries in Athena,  
 * access the catalog objects (i.e. databases and tables)  
 * access to an S3 bucket where query results can be stored, and  
 * access to th
 * S3 bucket and objects that need to be read to run the query.  
+
+Also role will be attached to EC2 instance and Bucket(abc-data) will be having policy as below.  
+```
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::abc-data/*",
+            "Condition": {
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "IP of that instance"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+4) kavit and vishwas: added to same group "Devops" as Rajat  
+5) Kushgra: Will also be in same group as above and a seperate role will be attached to him to create and invoke Lambda function.      
+
+We need to enable VPC access for the Lambda function, during which you will assign it a Security Group.  
+Then, within the Security Group assigned to the RDS instance you will enable access for the Security Group assigned to the Lambda function.  
+
+---------------------------------------------------------------------------  
 
