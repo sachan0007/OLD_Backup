@@ -1,0 +1,93 @@
+AWS
+
+Task 1
+
+Rajat is the devops guy in 'abc' organization and he is responsible for creating 't2.micro' and all the 'm' family of instances as per requirement,  
+but he can't terminate 'm' family of instances but that's not the case with t2.micro.  
+Tejasvi Rana has got root access to the account but he isn't a technical guy.  
+He is always suspicious about Rajat's actions in company's aws account.  
+Luckily Tejasvi has got a friend, Priyanka jugran, she is amazon certified and knows everything about aws.  
+Tejasvi wants Priyanka to cross check rajat's IAM permissions. In order to do that, he gave priyanaka full access.  
+Now priyanka needs s3 storage for one of her friend, priyanka sharama to run athena queries for data analysis,  
+they don't want to pay for that from their own aws account.  
+Jugran has created a bucket with name 'abc-data' with a policy that  
+sharma will only be able to access this bucket from a particular ec2 instance that she created & provided the user details to sharma.  
+Rajat referenced his friends kavit and vishwas to his organization and now all of then share the same permission level.
+Kushgra is also one of the team memebers from operations team but recently  
+he has got a task to create and run lambda function that is going to access rds database.
+
+
+How many IAM groups gets created
+How many IAM users gets created
+Permissions associated with them
+
+
+NOTE!
+
+Make Documentation
+
+Task 2
+
+
+Create an infrastructure that would scale as per load:
+Create cloudwatch alarms for scaling up and scaling down along with sns topic to notify you during any scaling operation
+
+
+Put fake load on the stack
+scale up if av. cpu threashold > 70
+scale down if av. cpu threashold < 40
+First do it via console and then via aws cli
+
+
+NOTE!
+
+Make sure you explore other matrices as well for scaling like memory, network etc..
+Make Documentation  
+
+-------------------------------------------------------------------    
+
+Users:  
+Rajat: With user policy as bolow:  
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RunInstance",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "StringLikeIfExists": {
+                    "ec2:InstanceType": [
+                        "t2.micro",
+                        "m4.*",
+                        "m5.*",
+                        "m5d.*"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:TerminateInstances",
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "ec2:InstanceType": [
+                        "t2.micro"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DescribeActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
