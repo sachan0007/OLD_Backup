@@ -137,3 +137,85 @@ Then, within the Security Group assigned to the RDS instance you will enable acc
 
 ---------------------------------------------------------------------------  
 
+**Task2:**  
+
+```
+#!/bin/bash
+set -e
+ 
+AS='ScalingGroup'
+LC='LaunchConfig'
+ 
+# create launch config
+aws autoscaling create-launch-configuration \
+    --launch-configuration-name $LC \
+    --image-id ami-0b3046001e1ba9a99 \
+    --instance-type t2.micro \
+    --instance-monitoring '{"Enabled": true}' \
+    --security-groups MySecurityGroup \
+    --key-name NewKeyPair
+ 
+# create AS group
+aws autoscaling create-auto-scaling-group \
+    --auto-scaling-group-name $AS \
+    --launch-configuration-name $LC \
+    --availability-zones ap-south-1a ap-south-1b \
+    --min-size 1 \
+    --max-size 5 \
+    --health-check-type EC2 \
+    --health-check-grace-period 300
+ 
+UP=$(aws autoscaling put-scaling-policy --auto-scaling-group-name $AS --policy-name Scale-UP --scaling-adjustment 1 --adjustment-type ChangeInCapacity --cooldown 60 | jq -r '.PolicyARN')
+DOWN=$(aws autoscaling put-scaling-policy --auto-scaling-group-name $AS --policy-name Scale-DOWN --scaling-adjustment -1 --adjustment-type ChangeInCapacity --cooldown 60 | jq -r '.PolicyARN')
+ 
+aws cloudwatch put-metric-alarm \
+    --alarm-name $AS-CPUHigh \
+    --metric-name CPUUtilization \
+    --namespace "AWS/EC2" \
+    --period 300 \
+    --evaluation-periods 1 \
+    --threshold 70 \
+    --statistic Average \
+    --comparison-operator GreaterThanThreshold \
+    --alarm-actions $UP \
+    --dimensions Name=AutoScalingGroupName,Value=$AS
+ 
+aws cloudwatch put-metric-alarm \
+    --alarm-name $AS-CPULow \
+    --metric-name CPUUtilization \
+    --namespace "AWS/EC2" \
+    --period 300 \
+    --evaluation-periods 1 \
+    --threshold 40 \
+    --statistic Average \
+    --comparison-operator LessThanThreshold \
+    --alarm-actions $DOWN \
+    --dimensions Name=AutoScalingGroupName,Value=$AS
+ 
+# Enable AS group (not instance) metrics in CloudWatch
+aws autoscaling enable-metrics-collection \
+    --auto-scaling-group-name $AS \
+    --granularity 1Minute \
+    --metrics GroupInServiceInstances GroupTotalInstances
+    
+# Create SNS topic
+Topic_arn=`aws sns create-topic \
+    --name EmailNotification | jq -r '.TopicArn'`
+    
+# Add subscription to topic
+aws sns subscribe \
+    --topic-arn $Topic_arn \
+    --protocol email \
+    --notification-endpoint abhisheksachaneee@gmail.com
+    
+# Add notification to AS group
+aws autoscaling put-notification-configuration \
+    --auto-scaling-group-name $AS \
+    --topic-arn $Topic_arn \
+    --notification-type autoscaling:EC2_INSTANCE_LAUNCH \
+                        autoscaling:EC2_INSTANCE_LAUNCH_ERROR \
+                        autoscaling:EC2_INSTANCE_TERMINATE \
+                        autoscaling:EC2_INSTANCE_TERMINATE_ERROR
+       
+```
+                 
