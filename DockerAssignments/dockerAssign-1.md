@@ -64,17 +64,23 @@ hello-world         latest              fce289e99eb9        7 months ago        
 
 
 [root@ip-172-31-28-135 docker]# **docker pull alpine:3.9**
+
 ```
 3.9: Pulling from library/alpine
 e7c96db7181b: Pull complete
 Digest: sha256:7746df395af22f04212cd25a92c1d6dbc5a06a0ca9579a229ef43008d4d1302a
 Status: Downloaded newer image for alpine:3.9
-[root@ip-172-31-28-135 docker]# docker images
+```
+
+[root@ip-172-31-28-135 docker]# **docker images**
+```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
 alpine              3.9                 055936d39205        3 months ago        5.53MB
 hello-world         latest              fce289e99eb9        7 months ago        1.84kB
 ```
+
+
 
 
 
