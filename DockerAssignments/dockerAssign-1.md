@@ -120,9 +120,13 @@ drwxr-xr-x   11 root     root          4096 Jul 11 17:29 var
 
 
 [root@ip-172-31-28-135 docker]#** docker ps**
-`CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES`
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```
 [root@ip-172-31-28-135 docker]# **docker run -it alpine /bin/sh**
-`/ #`  
+```
+/ #
+```  
 [root@ip-172-31-28-135 docker]# **docker ps**
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
