@@ -90,7 +90,8 @@ hello-world         latest              fce289e99eb9        7 months ago        
 
 
 [root@ip-172-31-28-135 docker]# **docker run alpine ls -l**
-**total 56
+```
+total 56
 drwxr-xr-x    2 root     root          4096 Jul 11 17:29 bin
 drwxr-xr-x    5 root     root           340 Aug 13 12:53 dev
 drwxr-xr-x    1 root     root          4096 Aug 13 12:53 etc
@@ -107,8 +108,8 @@ drwxr-xr-x    2 root     root          4096 Jul 11 17:29 srv
 dr-xr-xr-x   13 root     root             0 Aug 13 12:53 sys
 drwxrwxrwt    2 root     root          4096 Jul 11 17:29 tmp
 drwxr-xr-x    7 root     root          4096 Jul 11 17:29 usr
-drwxr-xr-x   11 root     root          4096 Jul 11 17:29 var**
-
+drwxr-xr-x   11 root     root          4096 Jul 11 17:29 var
+```
 
 
 
