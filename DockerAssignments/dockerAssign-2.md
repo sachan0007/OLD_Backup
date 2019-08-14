@@ -15,18 +15,21 @@ Tag your local "alpine" image with name "myimage" along with version 1.0
 
 -----------------------------------------------------------------------    
 
-**[root@ip-172-31-28-135 docker]# docker pull alpine**
-**Using default tag: latest
+**[root@ip-172-31-28-135 docker]# docker pull alpine**  
+```
+Using default tag: latest
 latest: Pulling from library/alpine
 050382585609: Pull complete
 Digest: sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998
 Status: Downloaded newer image for alpine:latest
 [root@ip-172-31-28-135 docker]# docker run -i -t alpine /bin/bash
-docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container proile or directory": unknown.**
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container proile or directory": unknown.
+```
 
-**[root@ip-172-31-28-135 docker]# docker run -i -t alpine /bin/sh**
-**/ # echo "hello world" > hello.txt
-/ # ls**
+
+**[root@ip-172-31-28-135 docker]# docker run -i -t alpine /bin/sh**  
+**/ # echo "hello world" > hello.txt  
+/ # ls**  
 
 ```
 bin        etc        home       media      opt        root       sbin       sys        usr
@@ -67,19 +70,27 @@ cceaa50d3cf3        alpine              "/bin/sh"           2 minutes ago       
 ```
 
 **[root@ip-172-31-28-135 docker]# docker stop cceaa50d3cf3**  
-cceaa50d3cf3
+```cceaa50d3cf3```  
 **[root@ip-172-31-28-135 docker]# docker ps**  
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS
+```CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS```   
 **[root@ip-172-31-28-135 docker]# docker start cceaa50d3cf3**  
-cceaa50d3cf3
+```cceaa50d3cf3```   
 **[root@ip-172-31-28-135 docker]# docker ps**  
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS
 cceaa50d3cf3        alpine              "/bin/sh"           3 minutes ago       Up 2 seconds
+```
+
 **[root@ip-172-31-28-135 docker]# docker exec -it cceaa50d3cf3 echo 'hello world!'**  
+```
 hello world!
-**[root@ip-172-31-28-135 docker]# docker ps**  
+```
+**[root@ip-172-31-28-135 docker]# docker ps**    
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 cceaa50d3cf3        alpine              "/bin/sh"           35 minutes ago      Up 32 minutes                           jolly_elion
+```
+
 
 
 
@@ -178,7 +189,7 @@ cceaa50d3cf3        alpine              "/bin/sh"           35 minutes ago      
 
 
 
-**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine:version1.0
+**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine:version1.0  
 [root@ip-172-31-28-135 docker]# docker images**
 
 ```
@@ -187,7 +198,7 @@ alpine              latest              b7b28af77ffe        4 weeks ago         
 alpine              version1.0          b7b28af77ffe        4 weeks ago         5.58MB
 ```
 
-**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine:version1.1
+**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine:version1.1  
 [root@ip-172-31-28-135 docker]# docker images**
 
 ```
@@ -197,7 +208,7 @@ alpine              version1.0          b7b28af77ffe        4 weeks ago         
 alpine              version1.1          b7b28af77ffe        4 weeks ago         5.58MB
 ```
 
-**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine/new:version1.1
+**[root@ip-172-31-28-135 docker]# docker tag b7b28af77ffe alpine/new:version1.1  
 [root@ip-172-31-28-135 docker]# docker images**
 
 ```
