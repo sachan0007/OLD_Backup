@@ -47,14 +47,16 @@ For more examples and ideas, visit:
 
 
 
-[root@ip-172-31-28-135 docker]# **docker pull alpin**e
+[root@ip-172-31-28-135 docker]# **docker pull alpine**
 ```
 Using default tag: latest
 latest: Pulling from library/alpine
 050382585609: Pull complete
 Digest: sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998
 Status: Downloaded newer image for alpine:latest
-[root@ip-172-31-28-135 docker]# docker images
+```
+[root@ip-172-31-28-135 docker]# **docker images**  
+```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
 hello-world         latest              fce289e99eb9        7 months ago        1.84kB
