@@ -1,15 +1,15 @@
-Assignment 1
+Assignment 1  
 
-Run a docker container from "hello-world" image.
-Pull "alpine" image from docker registry and see if image is available in your local image list.
-Pull some specific version of docker "alpine" image from docker registry.
-Run a docker container from local image "alpine" and run an inline command "ls -l" while running container.
-Try to take login to container created using "alpine" image.
-Detach yourself from the container without making it exit/container kill.
-Check running containers and see if you can find out the stopped containers.
-Stop running container.
-Start container that was stopped earlier.
-Try to remove "alpine" image from your local system.
+Run a docker container from "hello-world" image.  
+Pull "alpine" image from docker registry and see if image is available in your local image list.  
+Pull some specific version of docker "alpine" image from docker registry.  
+Run a docker container from local image "alpine" and run an inline command "ls -l" while running container.  
+Try to take login to container created using "alpine" image.  
+Detach yourself from the container without making it exit/container kill.  
+Check running containers and see if you can find out the stopped containers.  
+Stop running container.  
+Start container that was stopped earlier.  
+Try to remove "alpine" image from your local system.  
 
 -------------------------------------------------------------------------  
 
