@@ -13,7 +13,8 @@ Try to remove "alpine" image from your local system.
 
 -------------------------------------------------------------------------  
 
-[root@ip-172-31-28-135 docker]# docker run hello-world
+[root@ip-172-31-28-135 docker]# **docker run hello-world**  
+```
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 1b930d010525: Pull complete
@@ -40,11 +41,14 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
+```
 
 
 
 
-[root@ip-172-31-28-135 docker]# docker pull alpine
+
+[root@ip-172-31-28-135 docker]# **docker pull alpin**e
+```
 Using default tag: latest
 latest: Pulling from library/alpine
 050382585609: Pull complete
@@ -54,14 +58,13 @@ Status: Downloaded newer image for alpine:latest
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
 hello-world         latest              fce289e99eb9        7 months ago        1.84kB
+```
 
 
 
 
-
-
-
-[root@ip-172-31-28-135 docker]# docker pull alpine:3.9
+[root@ip-172-31-28-135 docker]# **docker pull alpine:3.9**
+```
 3.9: Pulling from library/alpine
 e7c96db7181b: Pull complete
 Digest: sha256:7746df395af22f04212cd25a92c1d6dbc5a06a0ca9579a229ef43008d4d1302a
@@ -71,13 +74,15 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
 alpine              3.9                 055936d39205        3 months ago        5.53MB
 hello-world         latest              fce289e99eb9        7 months ago        1.84kB
+```
 
 
 
 
 
-[root@ip-172-31-28-135 docker]# docker run alpine ls -l
-total 56
+
+[root@ip-172-31-28-135 docker]# **docker run alpine ls -l**
+**total 56
 drwxr-xr-x    2 root     root          4096 Jul 11 17:29 bin
 drwxr-xr-x    5 root     root           340 Aug 13 12:53 dev
 drwxr-xr-x    1 root     root          4096 Aug 13 12:53 etc
@@ -94,27 +99,30 @@ drwxr-xr-x    2 root     root          4096 Jul 11 17:29 srv
 dr-xr-xr-x   13 root     root             0 Aug 13 12:53 sys
 drwxrwxrwt    2 root     root          4096 Jul 11 17:29 tmp
 drwxr-xr-x    7 root     root          4096 Jul 11 17:29 usr
-drwxr-xr-x   11 root     root          4096 Jul 11 17:29 var
+drwxr-xr-x   11 root     root          4096 Jul 11 17:29 var**
 
 
 
 
-[root@ip-172-31-28-135 docker]# docker run -it alpine /bin/sh
-/ #
+
+[root@ip-172-31-28-135 docker]# **docker run -it alpine /bin/sh**
+/ **#**
 
 
 
-[root@ip-172-31-28-135 docker]# docker ps
+[root@ip-172-31-28-135 docker]#** docker ps**
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-[root@ip-172-31-28-135 docker]# docker run -it alpine /bin/sh
-/ # [root@ip-172-31-28-135 docker]# docker ps
+[root@ip-172-31-28-135 docker]# **docker run -it alpine /bin/sh**
+/ #  
+[root@ip-172-31-28-135 docker]# **docker ps**
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           7 seconds ago       Up 6 seconds                            gracious_jepsen
 
 
 
 
-[root@ip-172-31-28-135 docker]# docker ps -a
+[root@ip-172-31-28-135 docker]# **docker ps -a**
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                            PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           46 seconds ago      Up 45 seconds                                         gracious_jepsen
 02367ac410fc        alpine              "/bin/sh"           2 minutes ago       Exited (137) 2 minutes ago                            trusting_euclid
@@ -137,33 +145,34 @@ a303a54b88b6        alpine              "ls -l"             15 minutes ago      
 49a2cb86d5cb        alpine              "/bin/sh"           21 minutes ago      Exited (0) 21 minutes ago                             zen_shockley
 c47ccda0bcb4        alpine              "ls -l"             25 minutes ago      Exited (0) 25 minutes ago                             pensive_chatterjee
 b3ec42baa307        hello-world         "/hello"            30 minutes ago      Exited (0) 30 minutes ago                             naughty_khorana
+```
 
 
 
 
 
 
-[root@ip-172-31-28-135 docker]# docker ps
+[root@ip-172-31-28-135 docker]# **docker ps**
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           4 minutes ago       Up 4 minutes                            gracious_jepsen
-[root@ip-172-31-28-135 docker]# docker stop 39801d09689a
+[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**
 39801d09689a
-[root@ip-172-31-28-135 docker]# docker ps -a
+[root@ip-172-31-28-135 docker]# **docker ps -a**
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           5 minutes ago       Exited (137) 16 seconds ago                       gracious_jepsen
-[root@ip-172-31-28-135 docker]# docker start 39801d09689a
+[root@ip-172-31-28-135 docker]# **docker start 39801d09689a**
 39801d09689a
-[root@ip-172-31-28-135 docker]# docker ps
+[root@ip-172-31-28-135 docker]# **docker ps**
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           5 minutes ago       Up 4 seconds                            gracious_jepsen
-[root@ip-172-31-28-135 docker]# docker stop 39801d09689a
+[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**
 39801d09689a
-[root@ip-172-31-28-135 docker]# docker images
+[root@ip-172-31-28-135 docker]# **docker images**
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
-[root@ip-172-31-28-135 docker]# docker rmi b7b28af77ffe
+[root@ip-172-31-28-135 docker]# **docker rmi b7b28af77ffe**
 Error response from daemon: conflict: unable to delete b7b28af77ffe (must be forced) - image is being used by stopped container 39801d09689a
-[root@ip-172-31-28-135 docker]# docker rmi -f b7b28af77ffe
+[root@ip-172-31-28-135 docker]# **docker rmi -f b7b28af77ffe**
 Untagged: alpine:latest
 Untagged: alpine@sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998
 Deleted: sha256:b7b28af77ffec6054d13378df4fdf02725830086c7444d9c278af25312aa39b9
