@@ -164,39 +164,39 @@ b3ec42baa307        hello-world         "/hello"            30 minutes ago      
 
 
 
-[root@ip-172-31-28-135 docker]# **docker ps**
+[root@ip-172-31-28-135 docker]# **docker ps**  
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           4 minutes ago       Up 4 minutes                            gracious_jepsen
 ```
 
-[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**
-`39801d09689a`
-[root@ip-172-31-28-135 docker]# **docker ps -a**
+[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**  
+`39801d09689a`  
+[root@ip-172-31-28-135 docker]# **docker ps -a**  
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           5 minutes ago       Exited (137) 16 seconds ago                       gracious_jepsen
 ```
 
-[root@ip-172-31-28-135 docker]# **docker start 39801d09689a**
-`39801d09689a`
-[root@ip-172-31-28-135 docker]# **docker ps**
+[root@ip-172-31-28-135 docker]# **docker start 39801d09689a**  
+`39801d09689a`  
+[root@ip-172-31-28-135 docker]# **docker ps**  
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 39801d09689a        alpine              "/bin/sh"           5 minutes ago       Up 4 seconds                            gracious_jepsen
 ```
 
-[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**
-`39801d09689a`
-[root@ip-172-31-28-135 docker]# **docker images**
+[root@ip-172-31-28-135 docker]# **docker stop 39801d09689a**  
+`39801d09689a`  
+[root@ip-172-31-28-135 docker]# **docker images**  
 ```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              b7b28af77ffe        4 weeks ago         5.58MB
 ```
 
-[root@ip-172-31-28-135 docker]# **docker rmi b7b28af77ffe**
-`Error response from daemon: conflict: unable to delete b7b28af77ffe (must be forced) - image is being used by stopped container 39801d09689a`
-[root@ip-172-31-28-135 docker]# **docker rmi -f b7b28af77ffe**
+[root@ip-172-31-28-135 docker]# **docker rmi b7b28af77ffe**  
+`Error response from daemon: conflict: unable to delete b7b28af77ffe (must be forced) - image is being used by stopped container 39801d09689a`  
+[root@ip-172-31-28-135 docker]# **docker rmi -f b7b28af77ffe**  
 ```
 Untagged: alpine:latest
 Untagged: alpine@sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998
