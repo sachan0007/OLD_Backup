@@ -136,7 +136,7 @@ Pre: python and boto
 
 Create 2 files at /etc/ansible  
 [ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.ini)  
-[ec2.ini](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.py)    
+[ec2.py](https://gitlab.com/tarun.kumar2/abhisheksachan/blob/abhishek/AWS%20Assignments/ec2.py)    
 
 chmod +x /path/to/ec2.py  
 chmod +x /path/to/ec2.ini  
